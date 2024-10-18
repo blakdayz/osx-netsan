@@ -4,9 +4,13 @@ version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
+packages=[{from="./src", include="*.py"}, {from="./src/scanners/", include="*.py"}, {from="./src/ui/", include="*.py"}, {from="./src/utils/", include="*.py"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
+pyqt5 = "^5.15.11"
+python-nmap = "^0.7.1"
+qasync = "^0.27.1"
 
 
 [build-system]

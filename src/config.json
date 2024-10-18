@@ -1,0 +1,54 @@
+{
+    "scan_interval": 120,
+    "default_intensity": 5,
+    "alert_rules": [
+        {
+            "host": "*",
+            "port": 80,
+            "criteria": "match_port"
+        },
+        {
+            "host": "*.example.com",
+            "port": 443,
+            "criteria": "match_host"
+        }
+    ],
+    "scan_types": [
+        {
+            "name": "TCP Connect Scan",
+            "command": "-sT",
+            "description": "Full TCP handshake to detect open ports.",
+            "intensity": 3
+        },
+        {
+            "name": "Stealth SYN Scan",
+            "command": "-sS",
+            "description": "SYN scan for open ports, avoids completing handshake.",
+            "intensity": 2
+        },
+        {
+            "name": "Service Version Detection",
+            "command": "-sV",
+            "description": "Detects service versions on open ports.",
+            "intensity": 4
+        },
+        {
+            "name": "Aggressive Scan",
+            "command": "-A",
+            "description": "Comprehensive scan with OS detection, version detection, script scanning, and traceroute.",
+            "intensity": 9
+        },
+        {
+            "name": "UDP Scan",
+            "command": "-sU",
+            "description": "Scans for open UDP ports, can be slow.",
+            "intensity": 7
+        },
+        {
+            "name": "Agressive Scan with Debug",
+            "command": "-A -d",
+            "description": "Runs all scripts with debug enabled.",
+            "intensity": 5
+        }
+    ]
+}
