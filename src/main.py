@@ -8,6 +8,15 @@ from qasync import QEventLoop
 import asyncio
 
 def main():
+    """
+    Initializes and runs the main application.
+
+    This function sets up the logging configuration, initializes the Qt application,
+    and starts the event loop. It creates instances of `ConfigManager` and `NmapUIApp`,
+    sets window properties, and schedules a background task to handle events.
+
+    :return: None
+    """
     logging.basicConfig(level=logging.INFO, filename="nmap_ui.log", format="%(asctime)s - %(message)s")
     app = QApplication(sys.argv)
     loop = QEventLoop(app)
